@@ -2,7 +2,7 @@ name: Master CICD
 
 on:
   push:
-    branches: [ main ]
+    branches: [ Maes95-patch-1 ]
 
 jobs:
   build:
@@ -15,7 +15,7 @@ jobs:
       with:
         java-version: 11
     - name: Build native with Maven
-      run: mvn -B package
+      run: mvn -B package -DskipTests
     - name: Upload jar for next job
       uses: actions/upload-artifact@v1
       with:
